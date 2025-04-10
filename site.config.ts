@@ -1,26 +1,26 @@
-import { siteConfig } from './lib/site-config'
+import { siteConfig } from "./lib/site-config";
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: '7875426197cf461698809def95960ebf',
+  rootNotionPageId: "1d12e4bcda438098a23dd127552cc56b",
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Next.js Notion Starter Kit',
-  domain: 'nextjs-notion-starter-kit.transitivebullsh.it',
-  author: 'Travis Fischer',
+  name: "Dominika Adamowicz - Creative Portfolio",
+  domain: "domada.online",
+  author: "Dominika Adamowicz",
 
   // open graph metadata (optional)
-  description: 'Example Next.js Notion Starter Kit Site',
+  description:
+    "Lodz Film School and Wajda School graduate in screenwriting with experience as Marketing and Event Creative/Copywriter as well as Screenwriter for film and TV.",
 
   // social usernames (optional)
-  twitter: 'transitive_bs',
-  github: 'transitive-bullshit',
-  linkedin: 'fisch2',
-  // mastodon: '#', // optional mastodon profile URL, provides link verification
+  // twitter: "",
+  // github: "",
+  // linkedin: "",
   // newsletter: '#', // optional newsletter URL
   // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
 
@@ -42,24 +42,24 @@ export default siteConfig({
   // any pages defined here will override their default URL paths
   // example:
   //
-  // pageUrlOverrides: {
-  //   '/foo': '067dd719a912471ea9a3ac10710e7fdf',
-  //   '/bar': '0be6efce9daf42688f65c76b89f8eb27'
-  // }
-  pageUrlOverrides: null,
+  pageUrlOverrides: {
+    "/portfolio": "1d12e4bcda43811a8037f2c12c38ecba",
+    "/contact": "1d12e4bcda43802db30de2e4c6745a54",
+  },
+  // pageUrlOverrides: null,
 
   // whether to use the default notion navigation style or a custom one with links to
   // important pages. To use `navigationLinks`, set `navigationStyle` to `custom`.
-  navigationStyle: 'default'
-  // navigationStyle: 'custom',
-  // navigationLinks: [
-  //   {
-  //     title: 'About',
-  //     pageId: 'f1199d37579b41cbabfc0b5174f4256a'
-  //   },
-  //   {
-  //     title: 'Contact',
-  //     pageId: '6a29ebcb935a4f0689fe661ab5f3b8d1'
-  //   }
-  // ]
-})
+  // navigationStyle: "default",
+  navigationStyle: "custom",
+  navigationLinks: [
+    {
+      title: "Portfolio",
+      url: "/portfolio",
+    },
+    {
+      title: "Contact",
+      url: "/contact",
+    },
+  ],
+});

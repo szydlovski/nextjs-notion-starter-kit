@@ -65,7 +65,7 @@ I recommend setting up a collection on your home page that contains all of your 
 
 From your Vercel project settings, you'll want to **disable Vercel Authentication** from `Project -> Settings -> Deployment Protection`.
 
-![How to disable Vercel Deployment Protection setting](https://github.com/user-attachments/assets/a1eb5a1f-da7a-497e-b4f6-f7e851a6cd8a 'How to disable Vercel Deployment Protection setting which causes social media preview image endpoint to return 401 Unauthorized')
+![How to disable Vercel Deployment Protection setting](https://github.com/user-attachments/assets/a1eb5a1f-da7a-497e-b4f6-f7e851a6cd8a "How to disable Vercel Deployment Protection setting which causes social media preview image endpoint to return 401 Unauthorized")
 
 💡 If you forget to do this your site will return `401 Unauthorized` responses when crawlers are trying to retrieve the images.
 
