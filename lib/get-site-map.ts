@@ -1,4 +1,4 @@
-import { getAllPagesInSpace, getPageProperty, uuidToId } from "notion-utils";
+import { getAllPagesInSpace, getPageProperty } from "notion-utils";
 import pMemoize from "p-memoize";
 
 import type * as types from "./types";

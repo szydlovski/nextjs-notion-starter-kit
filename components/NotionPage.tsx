@@ -13,7 +13,6 @@ import {
   useNotionContext,
 } from "react-notion-x";
 import { EmbeddedTweet, TweetNotFound, TweetSkeleton } from "react-tweet";
-import { useSearchParam } from "react-use";
 
 import type * as types from "@/lib/types";
 import * as config from "@/lib/config";
@@ -159,16 +158,8 @@ export function NotionPage({
 }: types.PageProps) {
   const router = useRouter();
 
-  if (router.isFallback) {
-    return <Loading />;
-  }
-
   const keys = Object.keys(recordMap?.block || {});
   const block = recordMap?.block?.[keys[0]]?.value;
-
-  if (error || !site || !block) {
-    return <Page404 site={site} pageId={pageId} error={error} />;
-  }
 
   const isBlogPost =
     block?.type === "page" && block?.parent_table === "collection";
@@ -224,6 +215,14 @@ export function NotionPage({
   const socialDescription =
     getPageProperty<string>("Description", block, recordMap) ||
     config.description;
+
+  if (router.isFallback) {
+    return <Loading />;
+  }
+
+  if (error || !site || !block) {
+    return <Page404 site={site} pageId={pageId} error={error} />;
+  }
 
   return (
     <>

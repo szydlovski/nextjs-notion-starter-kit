@@ -48,7 +48,7 @@ async function createPreviewImage(
       if (cachedPreviewImage) {
         return cachedPreviewImage;
       }
-    } catch (err) {
+    } catch {
       // ignore redis errors
     }
 
@@ -63,12 +63,12 @@ async function createPreviewImage(
 
     try {
       await db.set(cacheKey, previewImage);
-    } catch (err) {
+    } catch {
       // ignore redis errors
     }
 
     return previewImage;
-  } catch (err) {
+  } catch {
     return null;
   }
 }
